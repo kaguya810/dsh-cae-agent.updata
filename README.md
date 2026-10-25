@@ -76,7 +76,7 @@ dsh plugin add dsh-cae-agent
 也可以直接从 GitHub 安装：
 
 ```bash
-dsh plugin add github:Fisfzy/dsh-cae-agent
+dsh plugin add github:kaguya810/dsh-cae-agent.updata
 ```
 
 - **e2e（`test/e2e.mjs`）**：连正在运行的 Abaqus/CAE bridge，用插件协议驱动真实工具（只读 + create_part/create_set/instantiate/create_material/assign_section/define_step/apply_load/set_bc/generate_mesh/set_workdir/run_python/set_friction + 非阻塞 submit_job/monitor_job）。已用它在真机上抓并修复过一批模板缺陷。
