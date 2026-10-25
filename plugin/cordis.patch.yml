@@ -7,4 +7,4 @@
 
 - insert:
     - id: dsh-cae-agent
-      name: '@dsh-cae-agent/dsh-cae-agent'
+      name: 'dsh-cae-agent'

@@ -86,14 +86,14 @@ cd plugin
 powershell -File scripts/link-deps.ps1   # 一次性：junction 运行时依赖
 npm install --no-save typescript@^5.6.3   # 编译器（或先 npm i -D typescript）
 npm run build                             # tsc -> lib
-npm test                                  # smoke + codegen（20 工具，Python 语法校验）
+npm test                                  # smoke + codegen（28 工具，Python 语法校验）
 ```
 
 ### DSH 接入
 
 `~/.dsh/cordis.patch.yml` 中 `dsh-cae-agent` 仍指向 `file://<repo>/plugin/lib/index.js`（`<repo>` 为本仓库绝对路径；TS 构建产物在 `plugin/lib/`），重启 DSH 后 `window.__DSH_BOOT__.entries` 应出现 `dsh-cae-agent`。
 
-### 新增运维工具 `abaqus_launch_cae`（第 21 个工具）
+### 新增运维工具 `abaqus_launch_cae`（现有 28 个工具之一）
 
 新增 `src/tools/launch.ts`：「一条指令调起 Abaqus/CAE」。它把插件从"依赖已运行 Abaqus"扩展到"能主动拉启 Abaqus/CAE 并自动开 bridge"：
 

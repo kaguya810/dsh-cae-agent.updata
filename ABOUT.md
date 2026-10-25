@@ -4,7 +4,7 @@ A [DeepSeek Harness](https://github.com/deepseek-ai) (DSH) **Cordis plugin** tha
 live **Abaqus/CAE** session through **native `abaqus_*` tools** (no MCP bridge). Written in
 TypeScript per the `dsh-plugin-dev` standard.
 
-- **Version:** `0.2.1`
+- **Version:** `0.2.4`
 - **Tools:** 28 native tools across three authorization tiers + `abaqus_launch_cae`
   (geometry / material / section / mesh / step / load / BC / interaction / composite /
   output / ODB post-processing / job / arbitrary-code fallback)

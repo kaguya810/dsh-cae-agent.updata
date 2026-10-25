@@ -2,7 +2,7 @@
 
 一个 **DSH（DeepSeek Harness）的 Cordis 插件**，通过 **原生工具**直接操作本机正在运行的 **Abaqus/CAE** 会话，覆盖完整建模链（几何、材料、网格、接触、分析步、载荷、边界、作业、ODB）。它是将 [CAE-Agent-Hub](https://github.com/Cai-aa/CAE-Agent-Hub) 的 Abaqus 集成迁移为 DSH 原生插件，取代了原先的 MCP 桥接方案。**源代码为 TypeScript，按 `dsh-plugin-dev` 规范开发。**
 
-**版本：** `0.2.1`（`plugin/` 内另有 `v0.2.1` tag）
+**版本：** `0.2.4`
 
 **语言：** 中文 | [English](README.en.md)
 
@@ -65,13 +65,27 @@ npm test                                 # smoke + codegen + load（离线）
 npm run e2e                              # 真机回归：连 48152 桥跑 19 项检查（需 Abaqus 桥开着）
 ```
 
+## 安装
+
+从 npm 安装：
+
+```bash
+dsh plugin add dsh-cae-agent
+```
+
+也可以直接从 GitHub 安装：
+
+```bash
+dsh plugin add github:Fisfzy/dsh-cae-agent
+```
+
 - **e2e（`test/e2e.mjs`）**：连正在运行的 Abaqus/CAE bridge，用插件协议驱动真实工具（只读 + create_part/create_set/instantiate/create_material/assign_section/define_step/apply_load/set_bc/generate_mesh/set_workdir/run_python/set_friction + 非阻塞 submit_job/monitor_job）。已用它在真机上抓并修复过一批模板缺陷。
 
 ## 历史 / 溯源与能力覆盖
 
 本项目**参考并借鉴**了 [CAE-Agent-Hub](https://github.com/Cai-aa/CAE-Agent-Hub)（MIT，Copyright 2026 Thompson Labs）与 [Abaqus-Control-MCP](https://github.com/Whfkl/Abaqus-Control-MCP)（MIT）的 **socket-bridge 架构**和 **Abaqus 建模方法论**，在此基础上**独立重写并扩展**为 DSH 原生 Cordis 插件，并非对上游的一比一复刻或完整实现。
 
-**工具能力覆盖（对照上游 Abaqus 能力，v0.2.1 · 28 工具）：**
+**工具能力覆盖（对照上游 Abaqus 能力，v0.2.4 · 28 工具）：**
 - ✅ Abaqus 实时会话操作：`run_python` / 模型与作业查询 / `submit_job` / `monitor_job` / `inspect_odb` / `capture_viewport` / `set_workdir`
 - ✅ 完整原生建模写链：部件/集合/装配/材料/截面/步/荷载/边界/网格/接触/摩擦/作业 + `abaqus_launch_cae`
 - ✅ **复合/高级建模**：`abaqus_define_composite_layup`（**壳复合** `CompositeShellSection`+`SectionLayer`，默认 SHELL/S4R）、`abaqus_define_orthotropic_material`（工程常数/正交/各向异性）、`abaqus_define_amplitude`（时变）、`abaqus_define_predefined_field`（初始场/预定义场）、`abaqus_set_output`（场/历史输出）

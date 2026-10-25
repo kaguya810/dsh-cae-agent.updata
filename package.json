@@ -1,0 +1,70 @@
+{
+  "name": "dsh-cae-agent",
+  "version": "0.2.4",
+  "description": "DSH Cordis plugin for operating a live Abaqus/CAE session.",
+  "type": "module",
+  "main": "plugin/lib/index.js",
+  "types": "plugin/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./plugin/lib/index.d.ts",
+      "default": "./plugin/lib/index.js"
+    },
+    "./client": {
+      "types": "./plugin/lib/client.d.ts",
+      "default": "./plugin/lib/client.js"
+    },
+    "./cordis.patch.yml": "./plugin/cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "plugin/lib",
+    "plugin/client",
+    "plugin/bridge",
+    "plugin/scripts",
+    "plugin/cordis.patch.yml",
+    "plugin/README.md",
+    "plugin/LICENSE",
+    "plugin/NOTICE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./plugin/cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-web",
+        "@deepseek-ai/dsh-client-locale"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "cordis",
+    "abaqus",
+    "cae",
+    "fea"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.1",
+    "@deepseek-ai/schemastery": "^3.0.0",
+    "react": "^18.2.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
+  }
+}

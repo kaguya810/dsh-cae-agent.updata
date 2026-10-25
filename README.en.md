@@ -2,7 +2,7 @@
 
 A **DSH (DeepSeek Harness) Cordis plugin** that operates a live **Abaqus/CAE** session through native tools — covering the entire modeling chain (geometry, material, mesh, contact, steps, loads, BCs, jobs, ODB). It is a migration of the Abaqus integration of [CAE-Agent-Hub](https://github.com/Cai-aa/CAE-Agent-Hub) into a native DSH plugin, replacing the prior MCP-bridge approach. **Source code is TypeScript, developed to the `dsh-plugin-dev` spec.**
 
-**Version:** `0.2.1` (`v0.2.1` tag)
+**Version:** `0.2.4`
 
 **Language:** [中文](README.md) | English
 

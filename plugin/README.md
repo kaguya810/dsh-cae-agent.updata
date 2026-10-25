@@ -16,7 +16,7 @@ Abaqus/CAE 内运行一个 socket bridge（`abaqus_mcp_plugin.py`，v5 协议，
 DSH(agent) ──原生工具──> dsh-cae-agent(本插件, TCP) ──> Abaqus/CAE socket bridge ──> Abaqus kernel
 ```
 
-## 工具（20 个，三档授权）
+## 工具（28 个，三档授权）
 
 ### 档位 1 — 只读查询（并发安全，可直接放行）
 | 工具 | 作用 |
@@ -74,6 +74,12 @@ plugin/
 ```
 
 ## 安装（DSH 本地）
+
+从 npm 安装：
+
+```bash
+dsh plugin add dsh-cae-agent
+```
 
 在 `~/.dsh/cordis.patch.yml` 追加：
 
