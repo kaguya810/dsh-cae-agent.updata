@@ -70,7 +70,7 @@ npm run e2e                              # 真机回归：连 48152 桥跑 19 �
 从 npm 安装：
 
 ```bash
-dsh plugin add dsh-cae-agent
+dsh plugin add @kaguya810/dsh-cae-agent
 ```
 
 也可以直接从 GitHub 安装：

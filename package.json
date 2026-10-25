@@ -1,10 +1,10 @@
 {
-  "name": "dsh-cae-agent",
+  "name": "@kaguya810/dsh-cae-agent",
   "version": "0.2.4",
   "description": "DSH Cordis plugin for operating a live Abaqus/CAE session.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kaguya810/dsh-cae-agent.updata.git"
+    "url": "git+https://github.com/kaguya810/dsh-cae-agent.updata.git"
   },
   "type": "module",
   "main": "plugin/lib/index.js",

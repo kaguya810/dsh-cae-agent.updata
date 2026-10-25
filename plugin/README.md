@@ -78,7 +78,7 @@ plugin/
 从 npm 安装：
 
 ```bash
-dsh plugin add dsh-cae-agent
+dsh plugin add @kaguya810/dsh-cae-agent
 ```
 
 在 `~/.dsh/cordis.patch.yml` 追加：
